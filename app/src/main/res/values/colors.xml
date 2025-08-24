@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Color (60%) -->
+    <color name="primaryColor">#FFFFFF</color>
+
+    <!-- Secondary Color (30%) -->
+    <color name="secondaryColor">#1E88E5</color>
+
+    <!-- Accent Color (10%) -->
+    <color name="accentColor">#FFC107</color>
+
+    <!-- Text Colors -->
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
+</resources>

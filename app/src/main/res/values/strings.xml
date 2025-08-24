@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FocusLift</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_button">Sign In</string>
+    <string name="login_forgot">Forgot Password?</string>
+    <string name="home_title">Daily Motivation</string>
+    <string name="quotes_title">All Quotes</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="profile_title">Profile</string>
+    <string name="sample_quote">"Your limitation—it's only your imagination."</string>
+    <string name="sample_author">- Focus Lift</string>
+    <string name="hello_blank_fragment">Favorites Fragment</string>
+
+</resources>
