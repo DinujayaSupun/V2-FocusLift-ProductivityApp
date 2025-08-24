@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">FocusLift</string>
-    <string name="login_email">Email</string>
-    <string name="login_password">Password</string>
-    <string name="login_button">Sign In</string>
-    <string name="login_forgot">Forgot Password?</string>
+
     <string name="home_title">Daily Motivation</string>
-    <string name="quotes_title">All Quotes</string>
-    <string name="favorites_title">Favorites</string>
-    <string name="profile_title">Profile</string>
-    <string name="sample_quote">"Your limitation—it's only your imagination."</string>
-    <string name="sample_author">- Focus Lift</string>
-    <string name="hello_blank_fragment">Favorites Fragment</string>
+
+        <string name="sample_quote">"Your limitation—it's only your imagination."</string>
+        <string name="sample_author">- Focus Lift</string>
+        <string name="hello_blank_fragment">Favorites Fragment</string>
+        <string name="app_name">FocusLift</string>
+
+        <!-- Login -->
+        <string name="login_title">FocusLift</string>
+        <string name="login_email">Email</string>
+        <string name="login_password">Password</string>
+        <string name="login_button">Sign In</string>
+        <string name="login_forgot">Forgot Password?</string>
+        <string name="signup_text">Don’t have an account? Sign Up</string>
+
+        <!-- Home -->
+
+        <string name="welcome_rich"><![CDATA[Welcome <b>User</b> 👋]]></string>
+        <string name="home_subtitle">Stay focused and motivated today!</string>
+        <string name="quote_of_day">Quote of the Day</string>
+        <string name="see_more_quotes">See More Quotes</string>
+
+        <!-- Tabs -->
+        <string name="tab_home">Home</string>
+        <string name="tab_quotes">Quotes</string>
+        <string name="tab_favorites">Favorites</string>
+        <string name="tab_profile">Profile</string>
+
+        <!-- Fragments headings -->
+        <string name="quotes_title">All Quotes</string>
+        <string name="favorites_title">Favorites</string>
+        <string name="profile_title">Profile</string>
+
 
 </resources>
