@@ -1,46 +1,44 @@
 package com.example.focuslift.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.focuslift.R
+import com.example.focuslift.activities.AnalyticsActivity
+import com.example.focuslift.activities.FocusSessionActivity
+import com.example.focuslift.activities.GoalsActivity
+import com.example.focuslift.activities.TasksActivity
 
 class HomeFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the Home Page layout
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
-    // 🔹 Called from android:onClick in fragment_home.xml
-    fun openDailyMotivation(view: View) {
-        // For exam UI purposes → simple Toast
-        Toast.makeText(requireContext(), "Opening Daily Motivation…", Toast.LENGTH_SHORT).show()
-
-        // 👉 If you want to really navigate to another fragment, uncomment below:
-
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, QuotesFragment())
-            .addToBackStack(null)
-            .commit()
-
+    fun navigateToTimer(view: View) {
+        val intent = Intent(requireContext(), FocusSessionActivity::class.java)
+        startActivity(intent)
     }
 
-    fun openExploreQuotes(view: View) {
-        Toast.makeText(requireContext(), "Opening All Quotes…", Toast.LENGTH_SHORT).show()
+    fun navigateToTasks(view: View) {
+        val intent = Intent(requireContext(), TasksActivity::class.java)
+        startActivity(intent)
+    }
 
-        // 👉 If you want navigation:
+    fun navigateToAnalytics(view: View) {
+        val intent = Intent(requireContext(), AnalyticsActivity::class.java)
+        startActivity(intent)
+    }
 
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, QuotesFragment())
-            .addToBackStack(null)
-            .commit()
-
+    fun navigateToGoals(view: View) {
+        val intent = Intent(requireContext(), GoalsActivity::class.java)
+        startActivity(intent)
     }
 }

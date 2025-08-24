@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary Color (60%) -->
-    <color name="primaryColor">#FFFFFF</color>
+    <color name="primary_60">#6750A4</color>
 
     <!-- Secondary Color (30%) -->
-    <color name="secondaryColor">#1E88E5</color>
+    <color name="secondary_30">#EADDFF</color>
 
     <!-- Accent Color (10%) -->
-    <color name="accentColor">#FFC107</color>
+    <color name="accent_10">#03DAC6</color>
 
-    <!-- Text Colors -->
-    <color name="textPrimary">#212121</color>
-    <color name="textSecondary">#757575</color>\
+    <!-- Neutral Colors -->
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
+    <color name="gray_light">#FFEEEEEE</color>
     <color name="gray">#FFDDDDDD</color>
-    <color name="text_gray">#FF666666</color>
+    <color name="gray_dark">#FF666666</color>
 
-    <!-- 60-30-10 rule -->
-    <color name="primary_60">#6750A4</color>    <!-- Primary (Purple) -->
-    <color name="secondary_30">#EADDFF</color>  <!-- Secondary (Light Purple) -->
-    <color name="accent_10">#03DAC6</color>     <!-- Accent (Teal) -->
+    <!-- Text Colors -->
+    <color name="text_primary">#FF000000</color>
+    <color name="text_secondary">#FF666666</color>
 
+    <!-- Additional Colors -->
     <color name="purple_500">#6750A4</color>
     <color name="purple_700">#4F378B</color>
-
-    <color name="dark_gray">#666666</color>
-
-    <!-- brand accents from  app -->
     <color name="teal_700">#018786</color>
-
+    <color name="red">#FF0000</color>
+    <!-- ... your existing colors ... -->
+    <color name="text_gray">#888888</color> <!-- Example gray, choose your own hex code -->
+    <color name="dark_gray">#555555</color>
 </resources>

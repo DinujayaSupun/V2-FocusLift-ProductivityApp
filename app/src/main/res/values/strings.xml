@@ -1,44 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">FocusLift</string>
 
-    <string name="home_title">Daily Motivation</string>
+    <!-- Login Screen -->
+    <string name="login_title">FocusLift</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="login_button">Sign In</string>
+    <string name="login_forgot">Forgot Password?</string>
+    <string name="signup_text">Don\'t have an account? Sign Up</string>
 
-        <string name="sample_quote">"Your limitation—it's only your imagination."</string>
-        <string name="sample_author">- Focus Lift</string>
-        <string name="hello_blank_fragment">Favorites Fragment</string>
-        <string name="app_name">FocusLift</string>
-
-        <!-- Login -->
-        <string name="login_title">FocusLift</string>
-        <string name="login_email">Email</string>
-        <string name="login_password">Password</string>
-        <string name="login_button">Sign In</string>
-        <string name="login_forgot">Forgot Password?</string>
-        <string name="signup_text">Don’t have an account? Sign Up</string>
-
-        <!-- Home -->
-
-        <string name="welcome_rich"><![CDATA[Welcome <b>User</b> 👋]]></string>
-        <string name="home_subtitle">Stay focused and motivated today!</string>
-        <string name="quote_of_day">Quote of the Day</string>
-        <string name="see_more_quotes">See More Quotes</string>
-
-        <!-- Tabs -->
-        <string name="tab_home">Home</string>
-        <string name="tab_quotes">Quotes</string>
-        <string name="tab_favorites">Favorites</string>
-        <string name="tab_profile">Profile</string>
-
-        <!-- Fragments headings -->
-        <string name="quotes_title">All Quotes</string>
-        <string name="favorites_title">Favorites</string>
-        <string name="profile_title">Profile</string>
-
+    <!-- Main Screen -->
     <string name="home_welcome">Welcome Back, User 👋</string>
-    <string name="quote_sample">“Your limitation—it’s only your imagination.”</string>
-    <string name="quote_author">- FocusLift</string>
+    <string name="home_subtitle">Stay focused and motivated today!</string>
+    <string name="today_focus">Today\'s Focus</string>
+    <string name="focus_time">120 min</string>
+    <string name="daily_goal">Daily Goal: 150/200 min</string>
+    <string name="start_focus">Start Focus Session</string>
+    <string name="view_tasks">View Tasks</string>
+    <string name="view_analytics">View Analytics</string>
+    <string name="set_goals">Set Goals</string>
+
+    <!-- Timer Screen -->
+    <string name="timer_title">Focus Session</string>
+    <string name="timer_time">25:00</string>
+    <string name="start_button">START</string>
+    <string name="pause_button">PAUSE</string>
+    <string name="stop_button">STOP</string>
+    <string name="session_type">Focus Session</string>
+
+    <!-- Tasks Screen -->
+    <string name="tasks_title">My Tasks</string>
+    <string name="add_task">Add Task</string>
+    <string name="task_hint">Enter a new task</string>
+    <string name="task_sample_1">Complete Mobile App Development assignment</string>
+    <string name="task_sample_2">Study for Data Structures exam</string>
+    <string name="task_sample_3">Prepare presentation for Software Engineering</string>
+
+    <!-- Analytics Screen -->
+    <string name="analytics_title">Focus Analytics</string>
+    <string name="weekly_focus">Weekly Focus Time</string>
+    <string name="total_focus">Total Focus Time</string>
+    <string name="sessions_completed">Sessions Completed</string>
+    <string name="focus_time_value">1,240 min</string>
+    <string name="sessions_value">48</string>
+
+    <!-- Goals Screen -->
+    <string name="goals_title">My Goals</string>
+    <string name="add_goal">Add Goal</string>
+    <string name="goal_sample_1">Complete 2000 min of focus time this month</string>
+    <string name="goal_sample_2">Finish mobile app project</string>
+    <string name="goal_sample_3">Achieve 30 consecutive days of focus</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_timer">Timer</string>
+    <string name="nav_tasks">Tasks</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_goals">Goals</string>
+    <!-- ... your existing strings ... -->
+    <string name="favorites_title">Favorites</string>
+    <string name="quote_sample">"The best way to predict the future is to create it."</string>
+    <string name="quote_author">- Peter Drucker</string>
     <string name="btn_daily_motivation">Daily Motivation</string>
     <string name="btn_explore_quotes">Explore Quotes</string>
-
-
+    <string name="profile_title">Profile</string>
+    <string name="quotes_title">Quotes</string>
 </resources>
