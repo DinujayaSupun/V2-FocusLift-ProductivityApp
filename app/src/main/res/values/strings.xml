@@ -34,5 +34,11 @@
         <string name="favorites_title">Favorites</string>
         <string name="profile_title">Profile</string>
 
+    <string name="home_welcome">Welcome Back, User 👋</string>
+    <string name="quote_sample">“Your limitation—it’s only your imagination.”</string>
+    <string name="quote_author">- FocusLift</string>
+    <string name="btn_daily_motivation">Daily Motivation</string>
+    <string name="btn_explore_quotes">Explore Quotes</string>
+
 
 </resources>
