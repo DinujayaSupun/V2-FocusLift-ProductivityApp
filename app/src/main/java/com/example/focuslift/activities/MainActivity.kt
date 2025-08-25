@@ -1,8 +1,14 @@
 package com.example.focuslift
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.focuslift.activities.AnalyticsActivity
+import com.example.focuslift.activities.FocusSessionActivity
+import com.example.focuslift.activities.GoalsActivity
+import com.example.focuslift.activities.TasksActivity
 import com.example.focuslift.fragments.FavoritesFragment
 import com.example.focuslift.fragments.HomeFragment
 import com.example.focuslift.fragments.ProfileFragment
@@ -53,5 +59,26 @@ class MainActivity : AppCompatActivity() {
             // Handle fragment loading error
             e.printStackTrace()
         }
+    }
+
+    // Navigation methods for home fragment buttons
+    fun navigateToTimer(view: View) {
+        val intent = Intent(this, FocusSessionActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToTasks(view: View) {
+        val intent = Intent(this, TasksActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToAnalytics(view: View) {
+        val intent = Intent(this, AnalyticsActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navigateToGoals(view: View) {
+        val intent = Intent(this, GoalsActivity::class.java)
+        startActivity(intent)
     }
 }
