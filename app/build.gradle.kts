@@ -19,11 +19,16 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            isMinifyEnabled = false
+            isDebuggable = true
         }
     }
     
@@ -40,6 +45,16 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    
+    // Performance optimizations
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            pickFirsts += "META-INF/gradle/incremental.annotation.processors"
+        }
+    }
+    
+
 }
 
 dependencies {
