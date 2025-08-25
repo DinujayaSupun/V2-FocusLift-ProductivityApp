@@ -1,10 +1,11 @@
-package com.example.focuslift
+package com.example.focuslift.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.focuslift.R
 import com.example.focuslift.activities.AnalyticsActivity
 import com.example.focuslift.activities.FocusSessionActivity
 import com.example.focuslift.activities.GoalsActivity

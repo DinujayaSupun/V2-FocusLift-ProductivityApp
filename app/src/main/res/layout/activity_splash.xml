@@ -10,66 +10,31 @@
 
     <!-- Logo Container -->
     <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:orientation="vertical"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:layout_marginBottom="32dp"
         android:gravity="center"
-        android:layout_marginBottom="32dp">
+        android:orientation="vertical">
 
         <!-- Lightbulb Logo Placeholder -->
         <ImageView
             android:id="@+id/logo_placeholder"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/ic_lightbulb"
-            android:tint="@color/primary_60"
-            android:background="@drawable/bg_circle_timer"
-            android:padding="16dp" />
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:padding="16dp"
+            android:src="@drawable/focuslift_app__icon_transparent" />
 
         <!-- Progress Arrows -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_arrow_back"
-                android:rotation="270"
-                android:tint="@color/accent_10"
-                android:layout_marginEnd="4dp" />
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_arrow_back"
-                android:rotation="270"
-                android:tint="@color/accent_10" />
-        </LinearLayout>
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal" />
     </LinearLayout>
 
     <!-- App Name -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        android:textColor="@color/text_primary"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="sans-serif-black" />
 
     <!-- Tagline -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/splash_tagline"
-        android:textSize="16sp"
-        android:textColor="@color/primary_60"
-        android:layout_marginBottom="48dp"
-        android:fontFamily="sans-serif-light" />
 
     <!-- Loading Indicator -->
     <ProgressBar

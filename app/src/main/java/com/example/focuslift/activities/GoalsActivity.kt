@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.focuslift.MainActivity
+import com.example.focuslift.activities.MainActivity
 import com.example.focuslift.R
 
 class GoalsActivity : AppCompatActivity() {

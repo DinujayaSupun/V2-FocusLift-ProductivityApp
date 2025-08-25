@@ -10,7 +10,8 @@
     <string name="login_password">Password</string>
     <string name="login_button">Sign In</string>
     <string name="login_forgot">Forgot Password?</string>
-    <string name="signup_text">Don\'t have an account? Sign Up</string>
+    <string name="signup_text">Don\'t have an account? </string>
+    <string name="signup_link_text">Sign Up</string>
 
     <!-- Main Screen -->
     <string name="home_welcome">Welcome Back, User 👋</string>
@@ -91,6 +92,20 @@
     <string name="btn_explore_quotes">Explore Quotes</string>
     <string name="profile_title">My Profile</string>
     <string name="quotes_title">Quotes</string>
+    
+    <!-- Signup Screen -->
+    <string name="signup_title">Create A New Account</string>
+    <string name="signup_subtitle">Register &amp; Get The Best Experience</string>
+    <string name="signup_username_hint">Enter User Name</string>
+    <string name="signup_email_hint">Enter Email Address</string>
+    <string name="signup_phone_hint">Enter Phone Number</string>
+    <string name="signup_password_hint">Enter Password</string>
+    <string name="signup_referral_hint">Enter Referral Code (Optional)</string>
+    <string name="signup_terms_text">Accept the </string>
+    <string name="signup_terms_link">Terms &amp; Condition</string>
+    <string name="signup_proceed_button">Proceed</string>
+    <string name="signup_signin_text">Already have an account? </string>
+    <string name="signup_signin_link">Sign In Now</string>
 
     <!-- Profile Screen -->
     <string name="edit_profile">Edit Profile</string>

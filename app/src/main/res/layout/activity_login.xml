@@ -9,32 +9,30 @@
 
     <!-- Logo -->
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="208dp"
+        android:layout_height="212dp"
         android:layout_gravity="center"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/app_name"
-        android:layout_marginTop="32dp"/>
+        android:src="@drawable/focuslift_app__icon_transparent" />
 
     <!-- App Name -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_title"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/primary_60" />
 
     <!-- Email -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Let’s Get You Started With FocusLift!" />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_edittext"
         android:hint="@string/login_email"
         android:inputType="textEmailAddress"
-        android:background="@drawable/bg_edittext"
-        android:padding="12dp"
-        android:layout_marginTop="24dp" />
+        android:padding="12dp" />
 
     <!-- Password -->
     <EditText
@@ -67,12 +65,30 @@
         android:onClick="navigateToMain" />
 
     <!-- Sign Up Link -->
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/signup_text"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/gray_dark"
-        android:gravity="center" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_text"
+            android:textColor="@color/gray_dark"/>
+
+        <TextView
+            android:id="@+id/tvSignUpLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup_link_text"
+            android:textColor="@color/primary_60"
+            android:textStyle="bold"
+            android:layout_marginStart="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="navigateToSignup"/>
+    </LinearLayout>
 
 </LinearLayout>
