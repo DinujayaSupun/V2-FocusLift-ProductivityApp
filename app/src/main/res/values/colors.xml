@@ -25,6 +25,8 @@
     <color name="purple_700">#4F378B</color>
     <color name="teal_700">#018786</color>
     <color name="red">#FF0000</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="green_500">#4CAF50</color>
     <!-- ... your existing colors ... -->
     <color name="text_gray">#888888</color> <!-- Example gray, choose your own hex code -->
     <color name="dark_gray">#555555</color>

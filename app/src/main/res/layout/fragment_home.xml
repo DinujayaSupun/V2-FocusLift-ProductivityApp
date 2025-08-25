@@ -167,7 +167,6 @@
                     android:padding="16dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:onClick="navigateToTimer"
                     android:layout_marginBottom="20dp">
 
                     <TextView
@@ -337,6 +336,7 @@
 
                 <!-- Analysis Button -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btnAnalytics"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -353,7 +353,7 @@
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
-                        android:onClick="navigateToAnalytics">
+                        >
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -454,6 +454,7 @@
 
                 <!-- Goals Button -->
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/btnGoals"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -470,7 +471,7 @@
                         android:background="?attr/selectableItemBackground"
                         android:clickable="true"
                         android:focusable="true"
-                        android:onClick="navigateToGoals">
+                        >
 
                         <TextView
                             android:layout_width="wrap_content"

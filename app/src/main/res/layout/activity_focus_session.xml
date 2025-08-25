@@ -1,107 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white">
+    android:background="@color/light_blue_bg">
 
-    <!-- Toolbar -->
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/primary_60"
-        android:padding="16dp">
+        android:background="@color/white"
+        android:padding="20dp"
+        android:elevation="4dp"
+        android:gravity="center_vertical">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_arrow_back"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:tint="@color/white"
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="0dp"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconTint="@color/primary_60"
+            style="@style/Widget.Material3.Button.IconButton"
             android:onClick="navigateToMain" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/timer_title"
-            android:textColor="@color/white"
+            android:text="Focus Session"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/text_primary"
             android:gravity="center" />
 
-        <View
-            android:layout_width="24dp"
-            android:layout_height="24dp" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSettings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:elevation="0dp"
+            app:icon="@drawable/ic_settings"
+            app:iconTint="@color/primary_60"
+            style="@style/Widget.Material3.Button.IconButton" />
+
     </LinearLayout>
 
-    <!-- Timer Content -->
+    <!-- Main Content -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="16dp">
+        android:padding="24dp">
 
-        <!-- Circular Progress Background -->
-        <FrameLayout
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:background="@drawable/bg_circle_timer">
+        <!-- Session Info -->
+        <TextView
+            android:id="@+id/tvSessionInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Focus Session 1/4 • 25 min"
+            android:textSize="18sp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:layout_marginBottom="32dp" />
 
-            <!-- Timer Text -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/timer_time"
-                android:textSize="48sp"
-                android:textStyle="bold"
-                android:textColor="@color/primary_60"
-                android:layout_gravity="center" />
+        <!-- Timer Display -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="320dp"
+            android:layout_height="320dp"
+            app:cardCornerRadius="160dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="32dp">
 
-            <!-- Session Type -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/session_type"
-                android:textSize="16sp"
-                android:textColor="@color/text_secondary"
-                android:layout_gravity="center"
-                android:layout_marginTop="80dp" />
-        </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Progress Indicator -->
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progressIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:progress="0"
+                    app:indicatorSize="320dp"
+                    app:trackThickness="8dp"
+                    app:trackColor="@color/gray_light"
+                    app:indicatorColor="@color/primary_60" />
+
+                <!-- Timer Text -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_gravity="center">
+
+                    <TextView
+                        android:id="@+id/tvTimer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="25:00"
+                        android:textSize="64sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_60"
+                        android:fontFamily="monospace" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="remaining"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Control Buttons -->
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="32dp">
+            android:orientation="vertical"
+            android:gravity="center">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/start_button"
+            <!-- Start/Pause Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnStartPause"
+                android:layout_width="200dp"
+                android:layout_height="56dp"
+                android:text="START"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
                 android:backgroundTint="@color/primary_60"
-                android:textColor="@color/white"
-                android:layout_marginEnd="16dp" />
+                android:elevation="6dp"
+                app:cornerRadius="28dp"
+                android:layout_marginBottom="16dp" />
 
-            <Button
+            <!-- Secondary Buttons -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/pause_button"
-                android:backgroundTint="@color/gray_dark"
-                android:textColor="@color/white"
-                android:layout_marginEnd="16dp" />
+                android:orientation="horizontal">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/stop_button"
-                android:backgroundTint="@color/red"
-                android:textColor="@color/white" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGiveUp"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:text="GIVE UP"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/red"
+                    android:elevation="4dp"
+                    app:cornerRadius="24dp"
+                    android:layout_marginEnd="12dp" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>

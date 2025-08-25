@@ -36,9 +36,21 @@
             android:name=".activities.MainActivity"
             android:exported="false" />
             
-        <activity
-            android:name=".activities.FocusSessionActivity"
-            android:exported="false" />
+                    <activity
+                android:name=".activities.FocusSessionActivity"
+                android:exported="false" />
+                
+            <activity
+                android:name=".activities.FocusSessionSetupActivity"
+                android:exported="false" />
+                
+            <activity
+                android:name=".activities.FocusSessionCompletedActivity"
+                android:exported="false" />
+                
+            <activity
+                android:name=".activities.SessionInterruptedActivity"
+                android:exported="false" />
             
         <activity
             android:name=".activities.TasksActivity"

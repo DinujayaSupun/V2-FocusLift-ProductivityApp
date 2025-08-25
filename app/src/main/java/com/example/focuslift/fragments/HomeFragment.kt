@@ -1,5 +1,6 @@
 package com.example.focuslift.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.focuslift.R
+import com.example.focuslift.activities.FocusSessionSetupActivity
+import com.example.focuslift.activities.AnalyticsActivity
+import com.example.focuslift.activities.GoalsActivity
 
 class HomeFragment : Fragment() {
     
@@ -26,6 +30,8 @@ class HomeFragment : Fragment() {
         
         setupEmojiSelection()
         setupTipButton()
+        setupFocusSessionButton()
+        setupNavigationButtons()
     }
     
     private fun setupEmojiSelection() {
@@ -61,6 +67,27 @@ class HomeFragment : Fragment() {
     private fun setupTipButton() {
         view?.findViewById<View>(R.id.btnSeeMoreTips)?.setOnClickListener {
             Toast.makeText(context, "More tips coming soon!", Toast.LENGTH_SHORT).show()
+        }
+    }
+    
+    private fun setupFocusSessionButton() {
+        view?.findViewById<View>(R.id.btnStartFocus)?.setOnClickListener {
+            val intent = Intent(requireContext(), FocusSessionSetupActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    
+    private fun setupNavigationButtons() {
+        // Analytics button
+        view?.findViewById<View>(R.id.btnAnalytics)?.setOnClickListener {
+            val intent = Intent(requireContext(), AnalyticsActivity::class.java)
+            startActivity(intent)
+        }
+        
+        // Goals button
+        view?.findViewById<View>(R.id.btnGoals)?.setOnClickListener {
+            val intent = Intent(requireContext(), GoalsActivity::class.java)
+            startActivity(intent)
         }
     }
 }
