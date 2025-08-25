@@ -36,4 +36,5 @@
     <color name="stat_box_green">#4CAF50</color>
     <color name="stat_box_purple">#9C27B0</color>
     <color name="tip_button_bg">#F5F5F5</color>
+    <color name="light_gray">#F0F0F0</color>
 </resources>

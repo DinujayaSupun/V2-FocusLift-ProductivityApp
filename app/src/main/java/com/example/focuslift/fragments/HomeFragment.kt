@@ -8,10 +8,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.cardview.widget.CardView
 import com.example.focuslift.R
 import com.example.focuslift.activities.FocusSessionSetupActivity
 import com.example.focuslift.activities.AnalyticsActivity
 import com.example.focuslift.activities.GoalsActivity
+import com.example.focuslift.activities.SettingsActivity
+import com.example.focuslift.activities.ProgressActivity
+import android.widget.LinearLayout
 
 class HomeFragment : Fragment() {
     
@@ -31,7 +35,11 @@ class HomeFragment : Fragment() {
         setupEmojiSelection()
         setupTipButton()
         setupFocusSessionButton()
-        setupNavigationButtons()
+        
+        // Add a small delay to ensure the view is fully inflated
+        view.post {
+            setupNavigationButtons()
+        }
     }
     
     private fun setupEmojiSelection() {
@@ -78,16 +86,94 @@ class HomeFragment : Fragment() {
     }
     
     private fun setupNavigationButtons() {
-        // Analytics button
-        view?.findViewById<View>(R.id.btnAnalytics)?.setOnClickListener {
-            val intent = Intent(requireContext(), AnalyticsActivity::class.java)
-            startActivity(intent)
+        // Debug: Check if view is available
+        if (view == null) {
+            Toast.makeText(context, "View is null in setupNavigationButtons!", Toast.LENGTH_LONG).show()
+            return
         }
         
-        // Goals button
-        view?.findViewById<View>(R.id.btnGoals)?.setOnClickListener {
-            val intent = Intent(requireContext(), GoalsActivity::class.java)
-            startActivity(intent)
+        Toast.makeText(context, "Setting up navigation buttons...", Toast.LENGTH_SHORT).show()
+        
+        // Test: Try to find the goals button directly first
+        val testButton = view?.findViewById<View>(R.id.btnGoals)
+        if (testButton != null) {
+            Toast.makeText(context, "Goals button found directly!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(context, "Goals button NOT found directly!", Toast.LENGTH_LONG).show()
+        }
+        
+        // Analytics button
+        val analyticsButton = view?.findViewById<View>(R.id.btnAnalytics)
+        if (analyticsButton != null) {
+            analyticsButton.setOnClickListener {
+                Toast.makeText(context, "Analytics button clicked!", Toast.LENGTH_SHORT).show()
+                try {
+                    val intent = Intent(requireContext(), AnalyticsActivity::class.java)
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                    e.printStackTrace()
+                }
+            }
+        } else {
+            Toast.makeText(context, "Analytics button NOT found!", Toast.LENGTH_LONG).show()
+        }
+
+        // Settings button
+        val settingsButton = view?.findViewById<View>(R.id.btnSettings)
+        if (settingsButton != null) {
+            settingsButton.setOnClickListener {
+                Toast.makeText(context, "Settings button clicked!", Toast.LENGTH_SHORT).show()
+                try {
+                    val intent = Intent(requireContext(), SettingsActivity::class.java)
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                    e.printStackTrace()
+                }
+            }
+        } else {
+            Toast.makeText(context, "Settings button NOT found!", Toast.LENGTH_LONG).show()
+        }
+
+        // Progress button
+        val progressButton = view?.findViewById<View>(R.id.btnProgress)
+        if (progressButton != null) {
+            progressButton.setOnClickListener {
+                Toast.makeText(context, "Progress button clicked!", Toast.LENGTH_SHORT).show()
+                try {
+                    val intent = Intent(requireContext(), ProgressActivity::class.java)
+                    startActivity(intent)
+                } catch (e: Exception) {
+                    Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                    e.printStackTrace()
+                }
+            }
+        } else {
+            Toast.makeText(context, "Progress button NOT found!", Toast.LENGTH_LONG).show()
+        }
+
+        // Goals button - Simplified approach
+        val goalsButton = view?.findViewById<View>(R.id.btnGoals)
+        if (goalsButton != null) {
+            Toast.makeText(context, "Goals button found! Setting up click listener...", Toast.LENGTH_SHORT).show()
+            
+            // Set click listener on the main button
+            goalsButton.setOnClickListener {
+                Toast.makeText(context, "Goals button clicked! Navigating...", Toast.LENGTH_SHORT).show()
+                
+                try {
+                    val intent = Intent(requireContext(), GoalsActivity::class.java)
+                    startActivity(intent)
+                    Toast.makeText(context, "Navigation to Goals successful!", Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    Toast.makeText(context, "Navigation failed: ${e.message}", Toast.LENGTH_LONG).show()
+                    e.printStackTrace()
+                }
+            }
+            
+        } else {
+            Toast.makeText(context, "Goals button NOT found!", Toast.LENGTH_LONG).show()
         }
     }
 }

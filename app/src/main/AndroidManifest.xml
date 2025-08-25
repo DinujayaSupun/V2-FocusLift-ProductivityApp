@@ -52,9 +52,7 @@
                 android:name=".activities.SessionInterruptedActivity"
                 android:exported="false" />
             
-        <activity
-            android:name=".activities.TasksActivity"
-            android:exported="false" />
+
             
         <activity
             android:name=".activities.AnalyticsActivity"
@@ -62,6 +60,14 @@
             
         <activity
             android:name=".activities.GoalsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".activities.ProgressActivity"
             android:exported="false" />
     </application>
 
