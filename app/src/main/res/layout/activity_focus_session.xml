@@ -1,98 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/light_blue_bg">
 
-    <!-- Header -->
+    <!-- Enhanced Header with Gradient -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:background="@color/white"
-        android:padding="20dp"
-        android:elevation="4dp"
-        android:gravity="center_vertical">
+        android:elevation="8dp">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@android:color/transparent"
-            android:elevation="0dp"
-            app:icon="@drawable/ic_arrow_back"
-            app:iconTint="@color/primary_60"
-            style="@style/Widget.Material3.Button.IconButton"
-            android:onClick="navigateToMain" />
-
-        <TextView
-            android:layout_width="0dp"
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Focus Session"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_primary"
-            android:gravity="center" />
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center_vertical">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSettings"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@android:color/transparent"
-            android:elevation="0dp"
-            app:icon="@drawable/ic_settings"
-            app:iconTint="@color/primary_60"
-            style="@style/Widget.Material3.Button.IconButton" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@android:color/transparent"
+                android:elevation="0dp"
+                app:icon="@drawable/ic_arrow_back"
+                app:iconTint="@color/primary_60"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:onClick="navigateToMain" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/focus_session_title"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:gravity="center" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSettings"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@android:color/transparent"
+                android:elevation="0dp"
+                app:icon="@drawable/ic_settings"
+                app:iconTint="@color/primary_60"
+                style="@style/Widget.Material3.Button.IconButton" />
+
+        </LinearLayout>
+
+        <!-- Session Progress Bar -->
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/sessionProgressBar"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="20dp"
+            app:trackColor="@color/gray_light"
+            app:indicatorColor="@color/primary_60"
+            app:trackThickness="8dp" />
 
     </LinearLayout>
 
     <!-- Main Content -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="24dp">
+        android:padding="24dp"
+        android:layout_marginTop="100dp">
 
-        <!-- Session Info -->
+        <!-- Motivational Quote -->
         <TextView
-            android:id="@+id/tvSessionInfo"
-            android:layout_width="wrap_content"
+            android:id="@+id/tvMotivationalQuote"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Focus Session 1/4 • 25 min"
-            android:textSize="18sp"
+            android:text="Stay focused, stay productive! 🚀"
+            android:textSize="16sp"
             android:textColor="@color/text_secondary"
             android:gravity="center"
-            android:layout_marginBottom="32dp" />
+            android:layout_marginBottom="24dp"
+            android:fontStyle="italic" />
 
-        <!-- Timer Display -->
+        <!-- Session Info Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginBottom="32dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvSessionInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Focus Session 1/4 • 25 min"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Session Type Badge -->
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipSessionType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pomodoro"
+                    app:chipBackgroundColor="@color/secondary_30"
+                    android:textColor="@color/primary_60"
+                    app:chipStrokeWidth="0dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Enhanced Timer Display -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="320dp"
             android:layout_height="320dp"
             app:cardCornerRadius="160dp"
-            app:cardElevation="8dp"
+            app:cardElevation="12dp"
             app:cardBackgroundColor="@color/white"
-            android:layout_marginBottom="32dp">
+            android:layout_marginBottom="32dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/primary_60">
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <!-- Progress Indicator -->
+                <!-- Enhanced Progress Indicator -->
                 <com.google.android.material.progressindicator.CircularProgressIndicator
                     android:id="@+id/progressIndicator"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:progress="0"
                     app:indicatorSize="320dp"
-                    app:trackThickness="8dp"
+                    app:trackThickness="12dp"
                     app:trackColor="@color/gray_light"
                     app:indicatorColor="@color/primary_60" />
 
-                <!-- Timer Text -->
+                <!-- Timer Text with Enhanced Typography -->
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -105,52 +166,73 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="25:00"
-                        android:textSize="64sp"
+                        android:textSize="72sp"
                         android:textStyle="bold"
                         android:textColor="@color/primary_60"
-                        android:fontFamily="monospace" />
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="remaining"
-                        android:textSize="16sp"
+                        android:text="@string/focus_session_remaining"
+                        android:textSize="18sp"
                         android:textColor="@color/text_secondary"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="sans-serif-light" />
 
                 </LinearLayout>
+
+                <!-- Session Status Indicator -->
+                <TextView
+                    android:id="@+id/tvSessionStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FOCUS"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:background="@drawable/bg_circle_timer"
+                    android:padding="8dp"
+                    android:layout_gravity="top|center_horizontal"
+                    android:layout_marginTop="20dp" />
 
             </FrameLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Control Buttons -->
+        <!-- Enhanced Control Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
 
-            <!-- Start/Pause Button -->
+            <!-- Start/Pause Button with Enhanced Styling -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnStartPause"
-                android:layout_width="200dp"
-                android:layout_height="56dp"
+                android:layout_width="240dp"
+                android:layout_height="64dp"
                 android:text="START"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/primary_60"
-                android:elevation="6dp"
-                app:cornerRadius="28dp"
-                android:layout_marginBottom="16dp" />
+                android:elevation="8dp"
+                app:cornerRadius="32dp"
+                android:layout_marginBottom="24dp"
+                app:icon="@drawable/ic_timer"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp" />
 
-            <!-- Secondary Buttons -->
+            <!-- Secondary Controls Row -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center">
 
+                <!-- Give Up Button -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGiveUp"
                     android:layout_width="120dp"
@@ -161,7 +243,88 @@
                     android:backgroundTint="@color/red"
                     android:elevation="4dp"
                     app:cornerRadius="24dp"
-                    android:layout_marginEnd="12dp" />
+                    android:layout_marginEnd="16dp" />
+
+                <!-- Skip Break Button (shown during breaks) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSkipBreak"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:text="SKIP BREAK"
+                    android:textSize="14sp"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/stat_box_green"
+                    android:elevation="4dp"
+                    app:cornerRadius="24dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Quick Stats -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="32dp">
+
+            <!-- Sessions Completed -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:padding="16dp"
+                android:layout_marginEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tvSessionsCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_60" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/focus_session_sessions"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+
+            </LinearLayout>
+
+            <!-- Total Focus Time -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:padding="16dp"
+                android:layout_marginStart="8dp">
+
+                <TextView
+                    android:id="@+id/tvTotalFocusTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0m"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/stat_box_green" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/focus_session_focus_time"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
 
             </LinearLayout>
 
@@ -169,4 +332,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -98,6 +98,31 @@
     <string name="quote_sample">"The best way to predict the future is to create it."</string>
     <string name="quote_author">- Peter Drucker</string>
     <string name="btn_daily_motivation">Daily Motivation</string>
+    
+    <!-- Enhanced Focus Screen -->
+    <string name="focus_session_title">Focus Session</string>
+    <string name="focus_session_status_focus">FOCUS</string>
+    <string name="focus_session_status_break">BREAK</string>
+    <string name="focus_session_remaining">remaining</string>
+    <string name="focus_session_start">START</string>
+    <string name="focus_session_pause">PAUSE</string>
+    <string name="focus_session_resume">RESUME</string>
+    <string name="focus_session_give_up">GIVE UP</string>
+    <string name="focus_session_skip_break">SKIP BREAK</string>
+    <string name="focus_session_sessions">Sessions</string>
+    <string name="focus_session_focus_time">Focus Time</string>
+    <string name="focus_session_quick_settings">Quick Settings</string>
+    <string name="focus_session_toggle_sounds">Toggle Sounds</string>
+    <string name="focus_session_toggle_strict_mode">Toggle Strict Mode</string>
+    <string name="focus_session_change_type">Change Focus Type</string>
+    <string name="focus_session_settings">Session Settings</string>
+    <string name="focus_session_select_type">Select Focus Type</string>
+    <string name="focus_session_settings_coming_soon">Session settings coming soon!</string>
+    <string name="focus_session_sounds_enabled">Sounds enabled</string>
+    <string name="focus_session_sounds_disabled">Sounds disabled</string>
+    <string name="focus_session_strict_mode_enabled">Strict mode enabled</string>
+    <string name="focus_session_strict_mode_disabled">Strict mode disabled</string>
+    <string name="focus_session_type_changed">Focus type changed to %1$s</string>
     <string name="btn_explore_quotes">Explore Quotes</string>
     <string name="profile_title">My Profile</string>
     <string name="quotes_title">Quotes</string>

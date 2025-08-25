@@ -11,16 +11,26 @@ import com.example.focuslift.R
 import com.example.focuslift.activities.SessionInterruptedActivity
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
+import com.google.android.material.chip.Chip
 import com.google.android.material.progressindicator.CircularProgressIndicator
+import com.google.android.material.progressindicator.LinearProgressIndicator
+import java.util.*
 
 class FocusSessionActivity : AppCompatActivity() {
     
     private lateinit var tvTimer: TextView
     private lateinit var tvSessionInfo: TextView
+    private lateinit var tvMotivationalQuote: TextView
+    private lateinit var chipSessionType: Chip
+    private lateinit var tvSessionStatus: TextView
     private lateinit var progressIndicator: CircularProgressIndicator
+    private lateinit var sessionProgressBar: LinearProgressIndicator
     private lateinit var btnStartPause: MaterialButton
     private lateinit var btnGiveUp: MaterialButton
+    private lateinit var btnSkipBreak: MaterialButton
     private lateinit var btnSettings: MaterialButton
+    private lateinit var tvSessionsCompleted: TextView
+    private lateinit var tvTotalFocusTime: TextView
     
     // Session Settings
     private var focusTimeMinutes = 25
@@ -47,6 +57,18 @@ class FocusSessionActivity : AppCompatActivity() {
     private var sessionsCompleted = 0
     private var breaksTaken = 0
     
+    // Motivational quotes
+    private val motivationalQuotes = arrayOf(
+        "Stay focused, stay productive! 🚀",
+        "Every minute of focus brings you closer to your goals! 💪",
+        "Distractions are temporary, success is permanent! 🎯",
+        "Your future self will thank you for this focus! ⭐",
+        "One session at a time, you're building greatness! 🔥",
+        "Focus is the key to unlocking your potential! 🚪",
+        "Every focused moment is an investment in your success! 💎",
+        "Stay committed to your goals, one session at a time! 🎯"
+    )
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_focus_session)
@@ -54,6 +76,7 @@ class FocusSessionActivity : AppCompatActivity() {
         loadSessionSettings()
         initializeViews()
         setupListeners()
+        updateMotivationalQuote()
         startFocusSession()
     }
     
@@ -78,14 +101,26 @@ class FocusSessionActivity : AppCompatActivity() {
     private fun initializeViews() {
         tvTimer = findViewById(R.id.tvTimer)
         tvSessionInfo = findViewById(R.id.tvSessionInfo)
+        tvMotivationalQuote = findViewById(R.id.tvMotivationalQuote)
+        chipSessionType = findViewById(R.id.chipSessionType)
+        tvSessionStatus = findViewById(R.id.tvSessionStatus)
         progressIndicator = findViewById(R.id.progressIndicator)
+        sessionProgressBar = findViewById(R.id.sessionProgressBar)
         btnStartPause = findViewById(R.id.btnStartPause)
         btnGiveUp = findViewById(R.id.btnGiveUp)
+        btnSkipBreak = findViewById(R.id.btnSkipBreak)
         btnSettings = findViewById(R.id.btnSettings)
+        tvSessionsCompleted = findViewById(R.id.tvSessionsCompleted)
+        tvTotalFocusTime = findViewById(R.id.tvTotalFocusTime)
+        
+        // Set session type chip
+        chipSessionType.text = focusType
         
         updateSessionInfo()
         updateTimerDisplay()
         updateProgressIndicator()
+        updateSessionProgressBar()
+        updateStats()
     }
     
     private fun setupListeners() {
@@ -101,27 +136,36 @@ class FocusSessionActivity : AppCompatActivity() {
             showGiveUpDialog()
         }
         
+        btnSkipBreak.setOnClickListener {
+            skipBreak()
+        }
+        
         btnSettings.setOnClickListener {
-            // Could open a quick settings panel
             showQuickSettingsDialog()
         }
     }
     
+    private fun updateMotivationalQuote() {
+        val randomQuote = motivationalQuotes[Random().nextInt(motivationalQuotes.size)]
+        tvMotivationalQuote.text = randomQuote
+    }
+    
     private fun startFocusSession() {
         isRunning = true
-        btnStartPause.text = "PAUSE"
+        btnStartPause.text = getString(R.string.focus_session_pause)
+        updateSessionStatus()
         startTimer()
     }
     
     private fun pauseSession() {
         isRunning = false
-        btnStartPause.text = "RESUME"
+        btnStartPause.text = getString(R.string.focus_session_resume)
         timer?.cancel()
     }
     
     private fun resumeSession() {
         isRunning = true
-        btnStartPause.text = "PAUSE"
+        btnStartPause.text = getString(R.string.focus_session_pause)
         startTimer()
     }
     
@@ -133,6 +177,7 @@ class FocusSessionActivity : AppCompatActivity() {
                 timeLeftInSeconds = (millisUntilFinished / 1000).toInt()
                 updateTimerDisplay()
                 updateProgressIndicator()
+                updateSessionProgressBar()
             }
             
             override fun onFinish() {
@@ -164,6 +209,8 @@ class FocusSessionActivity : AppCompatActivity() {
                 startNextFocusSession()
             }
         }
+        
+        updateStats()
     }
     
     private fun startBreak() {
@@ -173,12 +220,17 @@ class FocusSessionActivity : AppCompatActivity() {
         updateSessionInfo()
         updateTimerDisplay()
         updateProgressIndicator()
+        updateSessionProgressBar()
+        updateSessionStatus()
+        
+        // Show skip break button
+        btnSkipBreak.visibility = View.VISIBLE
         
         if (autoStartBreaks) {
             startTimer()
         } else {
             isRunning = false
-            btnStartPause.text = "START BREAK"
+            btnStartPause.text = getString(R.string.focus_session_start)
         }
     }
     
@@ -189,8 +241,19 @@ class FocusSessionActivity : AppCompatActivity() {
         updateSessionInfo()
         updateTimerDisplay()
         updateProgressIndicator()
+        updateSessionProgressBar()
+        updateSessionStatus()
+        
+        // Hide skip break button
+        btnSkipBreak.visibility = View.GONE
         
         startTimer()
+    }
+    
+    private fun skipBreak() {
+        // Skip the current break and start next focus session
+        currentSession++
+        startNextFocusSession()
     }
     
     private fun onAllSessionsComplete() {
@@ -217,10 +280,36 @@ class FocusSessionActivity : AppCompatActivity() {
         progressIndicator.progress = progress
     }
     
+    private fun updateSessionProgressBar() {
+        val totalSessions = sessionCount * 2 - 1 // Focus sessions + breaks
+        val currentProgress = if (isFocusTime) {
+            (currentSession - 1) * 2
+        } else {
+            (currentSession - 1) * 2 + 1
+        }
+        val progress = (currentProgress * 100 / totalSessions).toInt()
+        sessionProgressBar.progress = progress
+    }
+    
+    private fun updateSessionStatus() {
+        if (isFocusTime) {
+            tvSessionStatus.text = getString(R.string.focus_session_status_focus)
+            tvSessionStatus.background = getDrawable(R.drawable.bg_session_status)
+        } else {
+            tvSessionStatus.text = getString(R.string.focus_session_status_break)
+            tvSessionStatus.background = getDrawable(R.drawable.bg_stat_box_green)
+        }
+    }
+    
     private fun updateSessionInfo() {
         val sessionText = if (isFocusTime) "Focus Session" else "Break Time"
         val timeText = if (isFocusTime) "${focusTimeMinutes} min" else "${breakTimeMinutes} min"
         tvSessionInfo.text = "$sessionText $currentSession/$sessionCount • $timeText"
+    }
+    
+    private fun updateStats() {
+        tvSessionsCompleted.text = sessionsCompleted.toString()
+        tvTotalFocusTime.text = "${totalFocusTimeCompleted}m"
     }
     
     private fun showGiveUpDialog() {
@@ -268,8 +357,53 @@ class FocusSessionActivity : AppCompatActivity() {
     }
     
     private fun showQuickSettingsDialog() {
-        // Show quick settings panel
-        // This could include toggling sounds, strict mode, etc.
+        // Show quick settings panel with toggles for sounds, strict mode, etc.
+        val settingsOptions = arrayOf("Toggle Sounds", "Toggle Strict Mode", "Change Focus Type", "Session Settings")
+        
+        AlertDialog.Builder(this)
+            .setTitle("Quick Settings")
+            .setItems(settingsOptions) { _, which ->
+                when (which) {
+                    0 -> toggleSounds()
+                    1 -> toggleStrictMode()
+                    2 -> changeFocusType()
+                    3 -> openSessionSettings()
+                }
+            }
+            .show()
+    }
+    
+    private fun toggleSounds() {
+        timerSound = !timerSound
+        ambientSound = !ambientSound
+        // Show feedback
+        showToast("Sounds ${if (timerSound) "enabled" else "disabled"}")
+    }
+    
+    private fun toggleStrictMode() {
+        strictMode = !strictMode
+        showToast("Strict mode ${if (strictMode) "enabled" else "disabled"}")
+    }
+    
+    private fun changeFocusType() {
+        val focusTypes = arrayOf("Pomodoro", "Custom", "Flow", "Deep Work")
+        AlertDialog.Builder(this)
+            .setTitle("Select Focus Type")
+            .setItems(focusTypes) { _, which ->
+                focusType = focusTypes[which]
+                chipSessionType.text = focusType
+                showToast("Focus type changed to $focusType")
+            }
+            .show()
+    }
+    
+    private fun openSessionSettings() {
+        // Could navigate to a settings activity or show a settings dialog
+        showToast("Session settings coming soon!")
+    }
+    
+    private fun showToast(message: String) {
+        android.widget.Toast.makeText(this, message, android.widget.Toast.LENGTH_SHORT).show()
     }
     
     override fun onDestroy() {
