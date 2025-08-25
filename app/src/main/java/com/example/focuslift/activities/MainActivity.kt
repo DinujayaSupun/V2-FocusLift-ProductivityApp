@@ -49,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             loadFragment(HomeFragment())
         }
+        
+        // Check if we need to show a specific fragment (coming from Tasks/Goals)
+        handleIntentFragment(intent)
     }
     
     private fun loadFragment(fragment: Fragment) {
@@ -78,5 +81,25 @@ class MainActivity : AppCompatActivity() {
     fun navigateToGoals(view: View) {
         val intent = Intent(this, GoalsActivity::class.java)
         startActivity(intent)
+    }
+    
+
+    
+    private fun handleIntentFragment(intent: Intent?) {
+        intent?.let {
+            val showFragment = it.getStringExtra("showFragment")
+            when (showFragment) {
+                "favorites" -> {
+                    loadFragment(FavoritesFragment())
+                    // Update bottom navigation selection
+                    findViewById<BottomNavigationView>(R.id.bottom_navigation)?.selectedItemId = R.id.favoritesFragment
+                }
+                "profile" -> {
+                    loadFragment(ProfileFragment())
+                    // Update bottom navigation selection
+                    findViewById<BottomNavigationView>(R.id.bottom_navigation)?.selectedItemId = R.id.profileFragment
+                }
+            }
+        }
     }
 }

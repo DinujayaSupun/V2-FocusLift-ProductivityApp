@@ -2,12 +2,18 @@ package com.example.focuslift.activities
 
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.focuslift.R
+import com.example.focuslift.activities.MainActivity
+import com.example.focuslift.fragments.FavoritesFragment
+import com.example.focuslift.fragments.HomeFragment
+import com.example.focuslift.fragments.ProfileFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.text.SimpleDateFormat
 import java.util.*
@@ -18,6 +24,7 @@ class TasksActivity : AppCompatActivity() {
     private lateinit var fabAddTask: FloatingActionButton
     private lateinit var tasksContainer: LinearLayout
     private lateinit var emptyStateContainer: LinearLayout
+    private lateinit var bottomNavigation: BottomNavigationView
 
     private val tasks = mutableListOf<Task>()
     private val dateFormat = SimpleDateFormat("MMM dd, yyyy", Locale.getDefault())
@@ -28,6 +35,7 @@ class TasksActivity : AppCompatActivity() {
 
         initializeViews()
         setupClickListeners()
+        setupBottomNavigation()
         loadSampleTasks()
         updateUI()
     }
@@ -37,6 +45,7 @@ class TasksActivity : AppCompatActivity() {
         fabAddTask = findViewById(R.id.fabAddTask)
         tasksContainer = findViewById(R.id.tasksContainer)
         emptyStateContainer = findViewById(R.id.emptyStateContainer)
+        bottomNavigation = findViewById(R.id.bottomNavigation)
     }
 
     private fun setupClickListeners() {
@@ -47,6 +56,77 @@ class TasksActivity : AppCompatActivity() {
         fabAddTask.setOnClickListener {
             showAddTaskDialog()
         }
+    }
+
+    private fun setupBottomNavigation() {
+        // Set the current item to tasks
+        bottomNavigation.selectedItemId = R.id.tasksFragment
+        
+        bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.homeFragment -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    startActivity(intent)
+                    true
+                }
+                R.id.tasksFragment -> {
+                    // Already on tasks screen
+                    true
+                }
+                R.id.favoritesFragment -> {
+                    // Navigate to MainActivity and show Favorites fragment
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("showFragment", "favorites")
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    startActivity(intent)
+                    true
+                }
+                R.id.profileFragment -> {
+                    // Navigate to MainActivity and show Profile fragment
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("showFragment", "profile")
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+    }
+    
+    private fun loadFragment(fragment: androidx.fragment.app.Fragment) {
+        try {
+            supportFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    android.R.anim.fade_in,
+                    android.R.anim.fade_out,
+                    android.R.anim.fade_in,
+                    android.R.anim.fade_out
+                )
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        } catch (e: Exception) {
+            // Handle fragment loading error
+            e.printStackTrace()
+        }
+    }
+    
+    // Navigation methods for home fragment buttons (same as MainActivity)
+    fun navigateToTimer(view: View) {
+        val intent = Intent(this, com.example.focuslift.activities.FocusSessionActivity::class.java)
+        startActivity(intent)
+    }
+    
+    fun navigateToAnalytics(view: View) {
+        val intent = Intent(this, com.example.focuslift.activities.AnalyticsActivity::class.java)
+        startActivity(intent)
+    }
+    
+    fun navigateToGoals(view: View) {
+        val intent = Intent(this, com.example.focuslift.activities.GoalsActivity::class.java)
+        startActivity(intent)
     }
 
     private fun loadSampleTasks() {
