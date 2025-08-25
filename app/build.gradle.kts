@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.viewpager2)
+    implementation(libs.androidx.recyclerview)
     
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

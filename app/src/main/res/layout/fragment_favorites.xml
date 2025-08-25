@@ -1,23 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/fav_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/light_blue_bg">
 
-    <TextView
-        android:id="@+id/tvFavoritesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/favorites_title"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginBottom="12dp"/>
-
-    <TextView
+    <!-- Header Section -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No favorites yet. Save quotes from Home or Quotes."
-        android:textColor="@color/text_gray"/>
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tvFavoritesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/favorites_title"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:textColor="@color/primary_60"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/favorites_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/bg_edittext"
+            android:padding="12dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_search"
+                android:tint="@color/text_gray"
+                android:layout_marginEnd="8dp"/>
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/search_favorites_hint"
+                android:background="@null"
+                android:textSize="16sp"
+                android:inputType="text"
+                android:imeOptions="actionSearch"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Filter Chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:background="@color/white"
+        android:layout_marginTop="1dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupFilters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_all"
+                android:checked="true"
+                style="@style/Widget.Material3.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipQuotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_quotes"
+                style="@style/Widget.Material3.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTasks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_tasks"
+                style="@style/Widget.Material3.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipTips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_tips"
+                style="@style/Widget.Material3.Chip.Filter"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipGoals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/filter_goals"
+                style="@style/Widget.Material3.Chip.Filter"/>
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <!-- Content Section -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- RecyclerView for Favorites -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFavorites"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:clipToPadding="false"/>
+
+        <!-- Empty State -->
+        <LinearLayout
+            android:id="@+id/emptyStateLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ic_favorite"
+                android:tint="@color/text_gray"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_favorites_title"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_favorites_message"
+                android:textSize="16sp"
+                android:textColor="@color/text_gray"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
 </LinearLayout>

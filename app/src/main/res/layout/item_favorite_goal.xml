@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_goals"
+                android:tint="@color/stat_box_purple"
+                android:layout_marginEnd="12dp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/filter_goals"
+                android:textStyle="bold"
+                android:textColor="@color/stat_box_purple"
+                android:textSize="14sp"/>
+
+            <ImageButton
+                android:id="@+id/btnRemove"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_favorite"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:tint="@color/red"
+                android:contentDescription="Remove from favorites"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvGoalTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Complete 2000 min of focus time this month"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"/>
+
+        <TextView
+            android:id="@+id/tvGoalDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Track daily progress and maintain consistency"
+            android:textSize="14sp"
+            android:textColor="@color/text_secondary"
+            android:lineSpacingExtra="2dp"/>
+
+        <TextView
+            android:id="@+id/tvTimestamp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Dec 15, 2024"
+            android:textSize="12sp"
+            android:textColor="@color/text_gray"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
