@@ -5,4 +5,12 @@
         <item name="colorSecondary">@color/secondary_30</item>
         <item name="android:statusBarColor">@color/primary_60</item>
     </style>
+    
+    <style name="Theme.FocusLift.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_60</item>
+        <item name="colorSecondary">@color/secondary_30</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>
