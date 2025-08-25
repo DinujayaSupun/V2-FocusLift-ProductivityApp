@@ -42,7 +42,7 @@
                 android:layout_height="32dp"
                 android:src="@drawable/ic_favorite"
                 android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="@color/red"
+                android:tint="@color/primary_60"
                 android:contentDescription="Remove from favorites"/>
         </LinearLayout>
 
