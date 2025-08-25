@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.cardview.widget.CardView
 import com.example.focuslift.R
 import com.example.focuslift.activities.FocusSessionSetupActivity
-import com.example.focuslift.activities.AnalyticsActivity
+import com.example.focuslift.activities.TasksActivity
 import com.example.focuslift.activities.GoalsActivity
 import com.example.focuslift.activities.SettingsActivity
 import com.example.focuslift.activities.ProgressActivity
@@ -102,13 +102,13 @@ class HomeFragment : Fragment() {
             Toast.makeText(context, "Goals button NOT found directly!", Toast.LENGTH_LONG).show()
         }
         
-        // Analytics button
-        val analyticsButton = view?.findViewById<View>(R.id.btnAnalytics)
-        if (analyticsButton != null) {
-            analyticsButton.setOnClickListener {
-                Toast.makeText(context, "Analytics button clicked!", Toast.LENGTH_SHORT).show()
+        // Tasks button
+        val tasksButton = view?.findViewById<View>(R.id.btnTasks)
+        if (tasksButton != null) {
+            tasksButton.setOnClickListener {
+                Toast.makeText(context, "Tasks button clicked!", Toast.LENGTH_SHORT).show()
                 try {
-                    val intent = Intent(requireContext(), AnalyticsActivity::class.java)
+                    val intent = Intent(requireContext(), TasksActivity::class.java)
                     startActivity(intent)
                 } catch (e: Exception) {
                     Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
@@ -116,7 +116,7 @@ class HomeFragment : Fragment() {
                 }
             }
         } else {
-            Toast.makeText(context, "Analytics button NOT found!", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Tasks button NOT found!", Toast.LENGTH_LONG).show()
         }
 
         // Settings button

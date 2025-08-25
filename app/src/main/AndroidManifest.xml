@@ -55,7 +55,7 @@
 
             
         <activity
-            android:name=".activities.AnalyticsActivity"
+            android:name=".activities.TasksActivity"
             android:exported="false" />
             
         <activity
