@@ -30,17 +30,17 @@ class HomeFragment : Fragment() {
     
     private fun setupEmojiSelection() {
         val emojiHappy = view?.findViewById<TextView>(R.id.emoji_happy)
-        val emojiNeutral = view?.findViewById<TextView>(R.id.emoji_neutral)
-        val emojiSad = view?.findViewById<TextView>(R.id.emoji_sad)
-        val emojiCrown = view?.findViewById<TextView>(R.id.emoji_crown)
+        val emojiNeutral = view?.findViewById<TextView>(R.id.emoji_excited)
+        val emojiSad = view?.findViewById<TextView>(R.id.emoji_neutral)
+        val emojiCrown = view?.findViewById<TextView>(R.id.emoji_sad)
         val emojiSleep = view?.findViewById<TextView>(R.id.emoji_sleep)
         
         // Set click listeners for emoji selection
-        emojiHappy?.setOnClickListener { selectEmoji(it as TextView, "Happy") }
-        emojiNeutral?.setOnClickListener { selectEmoji(it as TextView, "Neutral") }
-        emojiSad?.setOnClickListener { selectEmoji(it as TextView, "Sad") }
-        emojiCrown?.setOnClickListener { selectEmoji(it as TextView, "Crown") }
-        emojiSleep?.setOnClickListener { selectEmoji(it as TextView, "Sleep") }
+        emojiHappy?.setOnClickListener { selectEmoji(it as TextView, "happy") }
+        emojiNeutral?.setOnClickListener { selectEmoji(it as TextView, "excited") }
+        emojiSad?.setOnClickListener { selectEmoji(it as TextView, "neutral") }
+        emojiCrown?.setOnClickListener { selectEmoji(it as TextView, "sad") }
+        emojiSleep?.setOnClickListener { selectEmoji(it as TextView, "Sleepy") }
         
         // Set default selection
         emojiHappy?.let { selectEmoji(it, "Happy") }
