@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.focuslift.R
 import com.example.focuslift.activities.LoginActivity
 import com.example.focuslift.activities.SignupActivity
+import com.example.focuslift.activities.OnboardingActivity
 
 class SplashActivity : AppCompatActivity() {
     
@@ -15,9 +16,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         
-        // Navigate to SignupActivity after 3 seconds
+        // Navigate to OnboardingActivity after 3 seconds
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, SignupActivity::class.java)
+            val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
             finish() // Close splash activity so user can't go back
         }, 3000) // 3 seconds delay

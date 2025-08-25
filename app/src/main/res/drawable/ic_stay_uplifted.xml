@@ -1,0 +1,163 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="280"
+    android:viewportHeight="280">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#F0F4F8"
+        android:pathData="M140,140m-120,0a120,120 0,1 1,240 0a120,120 0,1 1,-240 0"/>
+    
+    <!-- Female Character -->
+    <!-- Body -->
+    <path
+        android:fillColor="#009688"
+        android:pathData="M80,180 L100,180 L100,220 L80,220 Z"/>
+    
+    <!-- Skirt -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M80,220 L100,220 L100,240 L80,240 Z"/>
+    
+    <!-- Head -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M85,160 L95,160 L95,180 L85,180 Z"/>
+    
+    <!-- Hair -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M83,158 L97,158 L97,162 L83,162 Z"/>
+    
+    <!-- Shoulder Bag -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M75,170 L85,170 L85,185 L75,185 Z"/>
+    
+    <!-- Bag Strap -->
+    <path
+        android:strokeColor="#5D4037"
+        android:strokeWidth="2"
+        android:pathData="M75,170 L75,160"/>
+    
+    <!-- Yellow Suitcase -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M70,200 L90,200 L90,230 L70,230 Z"/>
+    
+    <!-- Suitcase Handle -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M75,195 L85,195 L85,200 L75,200 Z"/>
+    
+    <!-- Smartphone Device -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M120,100 L200,100 L200,180 L120,180 Z"/>
+    
+    <!-- Phone Border -->
+    <path
+        android:strokeColor="#1565C0"
+        android:strokeWidth="2"
+        android:pathData="M120,100 L200,100 L200,180 L120,180 Z"/>
+    
+    <!-- Phone Screen -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M125,105 L195,105 L195,175 L125,175 Z"/>
+    
+    <!-- Profile Card in Phone -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M130,110 L190,110 L190,170 L130,170 Z"/>
+    
+    <!-- Profile Avatar -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M150,120 L170,120 L170,140 L150,140 Z"/>
+    
+    <!-- Avatar Circle -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M150,120 L170,120 L170,140 L150,140 Z"/>
+    
+    <!-- Person in Avatar -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M155,125 L165,125 L165,135 L155,135 Z"/>
+    
+    <!-- Stars Rating -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M140,150 L145,150 L145,155 L140,155 Z"/>
+    
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M150,150 L155,150 L155,155 L150,155 Z"/>
+    
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M160,150 L165,150 L165,155 L160,155 Z"/>
+    
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M170,150 L175,150 L175,155 L170,155 Z"/>
+    
+    <!-- Fifth star (unfilled) -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M180,150 L185,150 L185,155 L180,155 Z"/>
+    
+    <!-- Text lines -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M140,160 L180,160 L180,165 L140,165 Z"/>
+    
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M140,170 L180,170 L180,175 L140,175 Z"/>
+    
+    <!-- Plant-like shapes behind phone -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M200,120 L220,120 L220,140 L200,140 Z"/>
+    
+    <path
+        android:fillColor="#66BB6A"
+        android:pathData="M210,110 L215,110 L215,120 L210,120 Z"/>
+    
+    <!-- Motivational elements -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M140,80 L160,80 L160,90 L140,90 Z"/>
+    
+    <!-- Energy lines -->
+    <path
+        android:strokeColor="#FF9800"
+        android:strokeWidth="3"
+        android:pathData="M120,70 L140,80 L160,70"/>
+    
+    <path
+        android:strokeColor="#FF9800"
+        android:strokeWidth="2"
+        android:pathData="M130,60 L140,70 L150,60"/>
+    
+    <!-- Mood indicators -->
+    <path
+        android:fillColor="#E91E63"
+        android:pathData="M200,80 L210,80 L210,90 L200,90 Z"/>
+    
+    <path
+        android:fillColor="#9C27B0"
+        android:pathData="M210,80 L220,80 L220,90 L210,90 Z"/>
+    
+    <!-- Quote marks -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M60,120 L70,120 L70,130 L60,130 Z"/>
+    
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M210,120 L220,120 L220,130 L210,130 Z"/>
+</vector>

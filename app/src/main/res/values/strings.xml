@@ -122,4 +122,15 @@
     <string name="reset_progress">Reset Progress</string>
     <string name="view_your_info">View your Info</string>
     <string name="log_out">Log Out</string>
+    
+    <!-- Onboarding Screen -->
+    <string name="onboarding_next">Next</string>
+    <string name="onboarding_get_started">Get Started</string>
+    <string name="onboarding_icon_description">Onboarding Icon</string>
+    <string name="onboarding_title_1">Fuel Your Focus</string>
+    <string name="onboarding_title_2">Set Daily Goals</string>
+    <string name="onboarding_title_3">Stay Uplifted</string>
+    <string name="onboarding_description_1">Quick focus boosters and daily tools to help you stay sharp.</string>
+    <string name="onboarding_description_2">Create small goals and track your progress every day.</string>
+    <string name="onboarding_description_3">Motivational quotes and mood check-ins to keep your energy high.</string>
 </resources>

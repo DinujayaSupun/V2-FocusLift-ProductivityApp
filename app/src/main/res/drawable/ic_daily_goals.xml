@@ -1,0 +1,140 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="280"
+    android:viewportHeight="280">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#F0F4F8"
+        android:pathData="M140,140m-120,0a120,120 0,1 1,240 0a120,120 0,1 1,-240 0"/>
+    
+    <!-- Main Laptop/Screen -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M60,80 L220,80 L220,200 L60,200 Z"/>
+    
+    <!-- Screen border -->
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="2"
+        android:pathData="M60,80 L220,80 L220,200 L60,200 Z"/>
+    
+    <!-- Left Window (Blue) -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M70,90 L130,90 L130,150 L70,150 Z"/>
+    
+    <!-- Notification Bell -->
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M110,70 L120,70 L120,90 L110,90 Z"/>
+    
+    <!-- Bell handle -->
+    <path
+        android:fillColor="#D32F2F"
+        android:pathData="M115,68 L115,70 L116,70 L116,68 Z"/>
+    
+    <!-- Right Window (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M150,90 L210,90 L210,150 L150,150 Z"/>
+    
+    <!-- List items in right window -->
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M160,100 L200,100 L200,110 L160,110 Z"/>
+    
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M160,120 L200,120 L200,130 L160,130 Z"/>
+    
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M160,140 L200,140 L200,150 L160,150 Z"/>
+    
+    <!-- Profile icon in right window -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M175,105 L185,105 L185,115 L175,115 Z"/>
+    
+    <!-- Left Person -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M40,180 L60,180 L60,220 L40,220 Z"/>
+    
+    <!-- Left Person Shirt -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M40,180 L60,180 L60,200 L40,200 Z"/>
+    
+    <!-- Left Person Pants -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M40,200 L60,200 L60,220 L40,220 Z"/>
+    
+    <!-- Left Person Head -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M45,160 L55,160 L55,180 L45,180 Z"/>
+    
+    <!-- Left Person Hair -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M43,158 L57,158 L57,162 L43,162 Z"/>
+    
+    <!-- Left Person holding card -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M65,170 L85,170 L85,190 L65,190 Z"/>
+    
+    <!-- Right Person -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M220,180 L240,180 L240,220 L220,220 Z"/>
+    
+    <!-- Right Person Shirt -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M220,180 L240,180 L240,200 L220,200 Z"/>
+    
+    <!-- Right Person Pants -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M220,200 L240,200 L240,220 L220,220 Z"/>
+    
+    <!-- Right Person Head -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M225,160 L235,160 L235,180 L225,180 Z"/>
+    
+    <!-- Right Person Hair -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M223,158 L237,158 L237,162 L223,162 Z"/>
+    
+    <!-- Abstract shapes behind screen -->
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M50,60 L70,60 L70,80 L50,80 Z"/>
+    
+    <path
+        android:fillColor="#E3F2FD"
+        android:pathData="M200,60 L220,60 L220,80 L200,80 Z"/>
+    
+    <!-- Goal checkmarks -->
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="3"
+        android:pathData="M80,110 L90,120 L100,110"/>
+    
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="3"
+        android:pathData="M80,130 L90,140 L100,130"/>
+    
+    <path
+        android:strokeColor="#4CAF50"
+        android:strokeWidth="3"
+        android:pathData="M80,150 L90,160 L100,150"/>
+</vector>

@@ -1,0 +1,119 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="280dp"
+    android:height="280dp"
+    android:viewportWidth="280"
+    android:viewportHeight="280">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="#F0F4F8"
+        android:pathData="M140,140m-120,0a120,120 0,1 1,240 0a120,120 0,1 1,-240 0"/>
+    
+    <!-- Left Figure (Female) -->
+    <!-- Body -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M80,180 L80,220 L100,220 L100,180 Z"/>
+    
+    <!-- Pants -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M80,220 L80,260 L100,260 L100,220 Z"/>
+    
+    <!-- Head -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M85,160 L95,160 L95,180 L85,180 Z"/>
+    
+    <!-- Hair -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M83,158 L97,158 L97,162 L83,162 Z"/>
+    
+    <!-- Suitcase -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M70,200 L90,200 L90,230 L70,230 Z"/>
+    
+    <!-- Suitcase handle -->
+    <path
+        android:fillColor="#BDBDBD"
+        android:pathData="M75,195 L85,195 L85,200 L75,200 Z"/>
+    
+    <!-- Phone -->
+    <path
+        android:fillColor="#424242"
+        android:pathData="M95,170 L105,170 L105,185 L95,185 Z"/>
+    
+    <!-- Bag -->
+    <path
+        android:fillColor="#795548"
+        android:pathData="M75,170 L85,170 L85,185 L75,185 Z"/>
+    
+    <!-- Right Figure (Male) -->
+    <!-- Suit jacket -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M180,180 L200,180 L200,220 L180,220 Z"/>
+    
+    <!-- Shirt -->
+    <path
+        android:fillColor="#81C784"
+        android:pathData="M185,190 L195,190 L195,210 L185,210 Z"/>
+    
+    <!-- Pants -->
+    <path
+        android:fillColor="#1976D2"
+        android:pathData="M180,220 L200,220 L200,260 L180,260 Z"/>
+    
+    <!-- Head -->
+    <path
+        android:fillColor="#8D6E63"
+        android:pathData="M185,160 L195,160 L195,180 L185,180 Z"/>
+    
+    <!-- Hair -->
+    <path
+        android:fillColor="#3E2723"
+        android:pathData="M183,158 L197,158 L197,162 L183,162 Z"/>
+    
+    <!-- Phone -->
+    <path
+        android:fillColor="#424242"
+        android:pathData="M175,170 L185,170 L185,185 L175,185 Z"/>
+    
+    <!-- Walking lines -->
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="2"
+        android:pathData="M60,270 L220,270"/>
+    
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="1"
+        android:pathData="M80,265 L80,275"/>
+    
+    <path
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="1"
+        android:pathData="M180,265 L180,275"/>
+    
+    <!-- Focus elements -->
+    <path
+        android:fillColor="#FFC107"
+        android:pathData="M140,80 L160,80 L160,100 L140,100 Z"/>
+    
+    <path
+        android:fillColor="#FF5722"
+        android:pathData="M150,70 L155,70 L155,80 L150,80 Z"/>
+    
+    <!-- Energy lines -->
+    <path
+        android:strokeColor="#FF9800"
+        android:strokeWidth="3"
+        android:pathData="M120,60 L140,80 L160,60"/>
+    
+    <path
+        android:strokeColor="#FF9800"
+        android:strokeWidth="2"
+        android:pathData="M130,50 L140,60 L150,50"/>
+</vector>
