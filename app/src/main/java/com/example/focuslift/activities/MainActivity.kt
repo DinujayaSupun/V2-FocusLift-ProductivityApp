@@ -13,7 +13,6 @@ import com.example.focuslift.activities.TasksActivity
 import com.example.focuslift.fragments.FavoritesFragment
 import com.example.focuslift.fragments.HomeFragment
 import com.example.focuslift.fragments.ProfileFragment
-import com.example.focuslift.fragments.QuotesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -29,8 +28,9 @@ class MainActivity : AppCompatActivity() {
                     loadFragment(HomeFragment())
                     true
                 }
-                R.id.quotesFragment -> {
-                    loadFragment(QuotesFragment())
+                R.id.tasksFragment -> {
+                    val intent = Intent(this, TasksActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.favoritesFragment -> {
@@ -68,10 +68,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun navigateToTasks(view: View) {
-        val intent = Intent(this, TasksActivity::class.java)
-        startActivity(intent)
-    }
+
 
     fun navigateToAnalytics(view: View) {
         val intent = Intent(this, AnalyticsActivity::class.java)

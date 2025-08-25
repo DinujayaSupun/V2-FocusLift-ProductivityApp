@@ -334,9 +334,9 @@
                 android:weightSum="2"
                 android:layout_marginBottom="16dp">
 
-                <!-- Tasks Button -->
+                <!-- Quotes Button -->
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/btnTasks"
+                    android:id="@+id/btnQuotes"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_weight="1"
@@ -357,14 +357,14 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="📝"
+                            android:text="💬"
                             android:textSize="32sp"
                             android:layout_marginBottom="8dp" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/tasks"
+                            android:text="@string/quotes_title"
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:textColor="@color/text_primary" />

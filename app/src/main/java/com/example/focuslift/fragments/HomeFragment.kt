@@ -15,6 +15,7 @@ import com.example.focuslift.activities.TasksActivity
 import com.example.focuslift.activities.GoalsActivity
 import com.example.focuslift.activities.SettingsActivity
 import com.example.focuslift.activities.ProgressActivity
+import com.example.focuslift.fragments.QuotesFragment
 import android.widget.LinearLayout
 
 class HomeFragment : Fragment() {
@@ -102,21 +103,24 @@ class HomeFragment : Fragment() {
             Toast.makeText(context, "Goals button NOT found directly!", Toast.LENGTH_LONG).show()
         }
         
-        // Tasks button
-        val tasksButton = view?.findViewById<View>(R.id.btnTasks)
-        if (tasksButton != null) {
-            tasksButton.setOnClickListener {
-                Toast.makeText(context, "Tasks button clicked!", Toast.LENGTH_SHORT).show()
+        // Quotes button
+        val quotesButton = view?.findViewById<View>(R.id.btnQuotes)
+        if (quotesButton != null) {
+            quotesButton.setOnClickListener {
+                Toast.makeText(context, "Quotes button clicked!", Toast.LENGTH_SHORT).show()
                 try {
-                    val intent = Intent(requireContext(), TasksActivity::class.java)
-                    startActivity(intent)
+                    // Load the QuotesFragment in the main container
+                    parentFragmentManager.beginTransaction()
+                        .replace(R.id.fragment_container, QuotesFragment())
+                        .addToBackStack(null)
+                        .commit()
                 } catch (e: Exception) {
                     Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_LONG).show()
                     e.printStackTrace()
                 }
             }
         } else {
-            Toast.makeText(context, "Tasks button NOT found!", Toast.LENGTH_LONG).show()
+            Toast.makeText(context, "Quotes button NOT found!", Toast.LENGTH_LONG).show()
         }
 
         // Settings button
