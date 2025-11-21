@@ -156,10 +156,10 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/ic_favorite"
                         android:background="@drawable/bg_circle_timer"
                         android:padding="12dp"
-                        android:tint="@color/red" />
+                        android:src="@drawable/ic_favorite"
+                        android:tint="@color/purple_700" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -179,9 +179,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/streak_days_value"
+                            android:textColor="@color/text_primary"
                             android:textSize="24sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/text_primary" />
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -205,10 +205,10 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:src="@drawable/ic_goals"
                         android:background="@drawable/bg_circle_timer"
                         android:padding="12dp"
-                        android:tint="@color/accent_10" />
+                        android:src="@drawable/ic_goals"
+                        android:tint="@color/purple_700" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -399,17 +399,17 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
+                    android:layout_marginEnd="16dp"
                     android:src="@drawable/ic_profile"
-                    android:tint="@color/red"
-                    android:layout_marginEnd="16dp" />
+                    android:tint="@color/purple_700" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/log_out"
-                    android:textSize="16sp"
-                    android:textColor="@color/red" />
+                    android:textColor="@color/purple_700"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:layout_width="16dp"

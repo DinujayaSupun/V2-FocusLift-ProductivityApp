@@ -26,15 +26,20 @@
     <color name="teal_700">#018786</color>
     <color name="red">#FF0000</color>
     <color name="orange_500">#FF9800</color>
-    <color name="green_500">#4CAF50</color>
-    <!-- ... your existing colors ... -->
-    <color name="text_gray">#888888</color> <!-- Example gray, choose your own hex code -->
+
+
+    <color name="text_gray">#888888</color>
     <color name="dark_gray">#555555</color>
 
     <!-- New Home Screen Colors -->
     <color name="light_blue_bg">#F0F8FF</color>
-    <color name="stat_box_green">#4CAF50</color>
     <color name="stat_box_purple">#9C27B0</color>
     <color name="tip_button_bg">#F5F5F5</color>
     <color name="light_gray">#F0F0F0</color>
+
+    <!-- ADD THIS LINE -->
+    <color name="stat_box_green">#4CAF50</color>
+
+    <!-- ... your existing colors ... -->
+    <!-- <color name="purple_500">#6200EE</color> -->
 </resources>

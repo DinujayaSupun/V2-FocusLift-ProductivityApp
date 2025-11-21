@@ -106,56 +106,56 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_button"
                         android:gravity="center_vertical"
-                        android:padding="12dp"
-                        android:background="@drawable/bg_stat_box_green"
-                        android:layout_marginBottom="12dp">
+                        android:orientation="horizontal"
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Focus Time Completed"
-                            android:textSize="16sp"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tvFocusTimeCompleted"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="25 min"
+                            android:textColor="@color/white"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white" />
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <!-- Sessions Completed Row -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/bg_button"
                         android:gravity="center_vertical"
-                        android:padding="12dp"
-                        android:background="@drawable/bg_stat_box_purple"
-                        android:layout_marginBottom="12dp">
+                        android:orientation="horizontal"
+                        android:padding="12dp">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="Sessions Completed"
-                            android:textSize="16sp"
-                            android:textColor="@color/white" />
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/tvSessionsCompleted"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2 sessions"
+                            android:textColor="@color/white"
                             android:textSize="18sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white" />
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <!-- Breaks Taken Row -->

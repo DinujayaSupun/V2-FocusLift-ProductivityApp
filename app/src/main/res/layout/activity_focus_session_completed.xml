@@ -78,12 +78,12 @@
                         android:id="@+id/tvAchievementTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="🚀 Focus Warrior"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
+                        android:layout_marginBottom="8dp"
                         android:gravity="center"
-                        android:layout_marginBottom="8dp" />
+                        android:text="Focus Warrior"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tvAchievementDescription"
@@ -190,58 +190,58 @@
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_button"
                             android:gravity="center"
-                            android:background="@drawable/bg_stat_box_green"
-                            android:padding="16dp"
-                            android:layout_marginEnd="8dp">
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:alpha="0.9"
                                 android:text="Sessions"
-                                android:textSize="14sp"
                                 android:textColor="@color/white"
-                                android:alpha="0.9" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvSessionsCompleted"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4"
+                                android:textColor="@color/white"
                                 android:textSize="24sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white" />
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:orientation="vertical"
+                            android:background="@drawable/bg_button"
                             android:gravity="center"
-                            android:background="@drawable/bg_stat_box_purple"
-                            android:padding="16dp"
-                            android:layout_marginStart="8dp">
+                            android:orientation="vertical"
+                            android:padding="16dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:alpha="0.9"
                                 android:text="Breaks"
-                                android:textSize="14sp"
                                 android:textColor="@color/white"
-                                android:alpha="0.9" />
+                                android:textSize="14sp" />
 
                             <TextView
                                 android:id="@+id/tvBreaksTaken"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="3"
+                                android:textColor="@color/white"
                                 android:textSize="24sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/white" />
+                                android:textStyle="bold" />
 
                         </LinearLayout>
 

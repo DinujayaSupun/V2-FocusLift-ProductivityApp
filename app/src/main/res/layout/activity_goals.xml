@@ -62,10 +62,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="🎯 Your Focus Journey"
-                    android:textSize="18sp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Your Focus Journey"
                     android:textColor="@color/text_secondary"
-                    android:layout_marginBottom="8dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -289,19 +289,19 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="80%"
+                                android:textColor="@color/purple_700"
                                 android:textSize="18sp"
-                                android:textStyle="bold"
-                                android:textColor="@color/stat_box_green" />
+                                android:textStyle="bold" />
                         </LinearLayout>
 
                         <ProgressBar
                             style="?android:attr/progressBarStyleHorizontal"
                             android:layout_width="match_parent"
                             android:layout_height="12dp"
+                            android:layout_marginBottom="12dp"
                             android:progress="80"
-                            android:progressTint="@color/stat_box_green"
                             android:progressBackgroundTint="@color/light_gray"
-                            android:layout_marginBottom="12dp" />
+                            android:progressTint="@color/purple_700" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -333,8 +333,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="In Progress"
-                                    android:textSize="12sp"
-                                    android:textColor="@color/stat_box_green" />
+                                    android:textColor="@color/purple_700"
+                                    android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

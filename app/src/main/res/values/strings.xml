@@ -14,7 +14,7 @@
     <string name="signup_link_text">Sign Up</string>
 
     <!-- Main Screen -->
-    <string name="home_welcome">Welcome Back, User 👋</string>
+    <string name="home_welcome">Welcome Back! 👋</string>
     <string name="home_welcome_new">Welcome back, Supun</string>
     <string name="home_subtitle">Stay focused and motivated today!</string>
     <string name="today_focus">Today\'s Focus</string>
